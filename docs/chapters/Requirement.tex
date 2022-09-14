@@ -1,0 +1,167 @@
+
+\chapter{Requirements Document} \label{chapter:requirement}
+% 由于本项目偏向于实际开发，因此适用于软件工程通用流程，即需求分析，系统设计，详细设计，编码，测试，集成等流程，为了提高开发效率，还会引入敏捷开发的方法来进行需求的取舍，从而达到系统快速可用，快速迭代的目的。因此，本系统所有功能以及特性都基于本章的需求文档进行开发。
+Since this project is oriented towards practical development, the common software engineering processes, i.e. requirements analysis, system design, detailed design, coding, testing, integration, will be applied. In order to improve development efficiency, agile development methods will be introduced to make requirements trade-offs so that the system will be available quickly and iterate quickly. Therefore, all functions and features of this system are developed based on the requirements document in this chapter.
+
+\section{Persona Analysis}
+% 在软件工程领域，为了编写高质量的需求文档，通常需要对系统的利益相关者进行采访，进而提取出用户故事，描述用户故事有许多方法，本文采用Persona方法进行表格陈列来叙述用户故事\cite{persona}。如\tref{Table:Persona}所见，本系统主要用户分为三类：普通用户，管理员，发电终端以及需要购买清洁能源积分的工厂老板。其中普通用户有着不同的身份背景，因此他们有不同的使用习惯以及不同的使用目标，例如将清洁能源积分视为投资标的；管理员的日常工作则是管理整个系统；工厂老板需要在这个系统中向用户以及发电终端购买清洁能源证书或者积分；最后，发电终端则需要在接收到订单的时候自动执行清洁能源证书发行
+In the field of software engineering, in order to write high quality requirement documents, it is often necessary to interview the stakeholders of the system and then extract the user stories. There are many ways to describe the user stories, and in this paper, we use the Persona method for table display to narrate the user stories \cite{persona}. As seen in \tref{Table:Persona}, the main users of the system are divided into three categories: general users, administrators, power generation terminals, and factory owners who need to purchase clean power points. The common users have different backgrounds, so they have different habits and goals, for example, they may consider clean energy credits as an investment target; the administrator's daily work is to manage the system; the factory owners need to purchase clean energy certificates or credits from users and generation terminals in the system; and finally, the generation terminals need to automatically perform the task of issuing clean energy certificates when they receive orders. The plant owner needs to purchase clean power certificates or points from users and generation terminals.
+\begin{table*}[!htb]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ccm{6cm}m{5cm}}
+\toprule
+\textbf{Persona} & \textbf{Avatar} & \textbf{User Info}& \textbf{User Scenarios}                                                                               \\ \midrule
+Sam& \includegraphics[width=1cm]{img/user-avatar.png}
+& Age:25-60 years old;Occupation:Any;Skills:Internet shopping,social networking;Characteristics:Concerned about new technology,care about environmental protection, have the desire to invest; Education level:High school or above.
+& When topping up your metered account, you want to prioritize the purchase of clean power and earn clean power points when you use it.Want to be able to trade your Clean Power Points for useful items.You want your Clean Power Points to be appreciated and traded with others.\\ \midrule
+
+Jone & \includegraphics[width=1cm]{img/boss.png}
+	& Age:Any; Occupation:Factory manager;Skills:Internet shopping; Characteristics:Need carbon credits in exchange for production targets; Education:Any & When you top up your metered account, you can choose to purchase clean power first and earn clean power credits when you use clean power.You can use Clean Power Credits to exchange for carbon emission targets.You can use money to buy Clean Power Credits from regular electricity users in the market.You can sell your Clean Power Credits on the market.\\ \midrule
+Shufu    & \includegraphics[width=1cm]{img/manager.png}
+	& Occupation:System administrator; Skills:Basic computer professional skills; Characteristics:Rigorous, honest and serious;Education:Bachelor's degree or above in computer-related majors. & You can monitor the system operation information.You can make changes to the system operation configuration.It is possible to operate the orders of the system (shipping, cancellation)\\ \midrule
+Generator&\includegraphics[width=1cm]{img/generator.png}
+	& Occupation: Power Generator& Clean power credits can be generated at the time of power generation. \\
+	\bottomrule
+\end{tabular}
+}
+
+\caption{Persona Table of the system}
+\label{Table:Persona}
+\end{table*}
+
+\section{Function Requirements}
+% 根据Persona所描述的用户故事，可以导出详细的需求列表，用户需求分为功能需求和非功能需求，功能需求表示系统或者系统中组件的行为和功能，可以表现为一组输入和输出，也可以表现为具体的事务处理流程，非功能需求是在功能需求的基础上对功能需求的具体实现提出的限制，包含安全需求，性能需求等，本节将详细描述系统的功能需求。
+Based on the user story described by Persona, a detailed list of requirements can be derived. User requirements are divided into functional and non-functional requirements. Functional requirements represent the behavior and functions of the system or components in the system, which can be expressed as a set of inputs and outputs, or as a specific transaction processing flow, and non-functional requirements are the restrictions on the specific implementation of functional requirements based on the functional requirements. Contains security requirements, performance requirements and so on \cite{funcnonfuncreq}. This section will describe the functional requirements of the system in detail.
+\subsection{Function Requirements of Users}
+% 对于清洁电力用户而言，他们的功能要求应该包含登录，注册，购买清洁电力，用清洁电力积分购买系统内的礼物，出售或购买清洁电力，修改自己的个人信息，在购买清洁电力后，用户会获得清洁电力证书，证书可以被兑换成清洁电力积分，这一条是未列在需求表中的功能需求。具体的用户功能需求列在了\tref{Table:FRuser}
+For Clean Power users, their functional requirements should include log in, register, buy Clean Power, use Clean Power Points to buy gifts in the system, sell or buy Clean Power Points, modify their personal information, and after buying Clean Power, the user will get a Clean Power certificate, which can be redeemed for Clean Power Points, which is a functional requirement not listed in the requirement table. The specific user functional requirements are listed in \tref{Table:FRuser}
+\begin{table}[!htb]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cm{3cm}m{7cm}}
+\toprule
+\textbf{Function Requirement} & \textbf{Name} & \textbf{Description}                                                                                                                             \\ \midrule
+FR-1                 & Login                            & User can login the system                                                                                                               \\ \midrule
+FR-2                 & Register                         & User can register as a user                                                                                                             \\ \midrule
+FR-3                 & Buy Clean Power and Clean Power Points   & User  can  buy  clean  power  and cleanpower points in market                                                                                   \\ \midrule
+FR-4                 & Browse Market & Users can browse the Clean Power, Gifts, and Clean Power Points Marketplace where they can use Clean Power Points to purchase items and sell Clean Power Points \\ \midrule
+FR-5                 & Buy Gifts by Clean Power Points  & Users can buy the items in clean power gifts market by Clean Power Points                                                                     \\ \midrule
+FR-6                 & Sell Clean Power Points          & Users can sell Clean Power Points to factories or others                                                                                \\ \midrule
+FR-7                 & Browse Personal Profile          & Users can see their personal information                                                                                                \\ \midrule
+FR-8                 & Edit Personal Profile            & Users can edit their personal information \\
+\bottomrule
+\end{tabular}
+}
+\caption{Function requirements of users}
+\label{Table:FRuser}
+\end{table}
+
+\subsection{Function Requirements of Power Generator}
+% 对于发电终端而言，功能相对简单，只需要实现售出清洁电力，生成清洁电力证书，发送清洁电力积分的功能，具体功能需求列在了\tref{Table:frPower}
+For the power generator terminal, the function is rather simple, it only needs to realize the function of selling clean power, generating clean power certificate and sending clean power points, the specific function requirements are listed in \tref{Table:frPower}
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cm{3cm}m{7cm}}
+\toprule
+\textbf{Function Requirement} & \textbf{Name} & \textbf{Description}                                                                           \\ \midrule
+FR-9                 & Generate Clean Power Certificate & A clean power generator can generate Clean Power Certificate when clean power is sold \\ \midrule
+FR-10                & Sell the Clean Power        & A clean power generator can sell the clean power to consumer                          \\ \midrule
+FR-11                & Send the Clean Power Points & When the clean power certificate is redeemed, the clean power point will be send     \\
+\bottomrule
+\end{tabular}
+}
+\caption{Function requirements of power generator}
+\label{Table:frPower}
+\end{table}
+
+\subsection{Function Requirements of Factory}
+% 对于工厂主而言，他们的核心需求与普通用户大致相同，具体需求列在了\tref{Table:frFact}
+For factory owners, their core requirements are roughly the same as those of ordinary users, and the specific requirements are listed in the \tref{Table:frFact}
+\begin{table}[!htb]
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cm{3cm}m{7cm}}
+\toprule
+\textbf{Function Requirement} & \textbf{Name} & \textbf{Description}                                                                                                                            \\ \midrule
+FR-12                 & Login                            & Factory can login the system                                                                                                               \\ \midrule
+FR-13                 & Register                         & Factory can register as a factory                                                                                                             \\ \midrule
+FR-14                 & Buy Clean Power Points                & Factories can buy clean power points                                                                                    \\ \midrule
+FR-15                 & Transfer Clean Power Points to Emission Credits & Factories can transfer Clean Power Points to Emission Credits \\ \midrule
+FR-16                 & Buy Goods by Clean Power Points  & Users can buy the items in clean power market by Clean Power Points                                                                     \\ 
+\bottomrule      
+\end{tabular}
+}
+\caption{Function requirements of factory}
+\label{Table:frFact}
+\end{table}
+
+\section{Non-functional Requirements}
+% 由于本系统中主要涉及电力交易以及积分交易活动，系统资产实质上是货币，所以对安全性和交易确认的快速性有一定的要求，因此，本节会详细地列出系统的安全需求和性能需求。
+Since this system is mainly involved in power trading as well as point trading activities, and the system assets are basically currencies, there are certain requirements for security and fast transaction confirmation, so this section will list the security requirements and performance requirements of the system in detail.
+
+\subsection{Security Requirements}
+% 用户的安全需求需要基于安全的三要素：机密性，可用性，完整性（CIA）进行，因此为了维护CIA特性，需要满足诸如用户验证，访问控制，数据验证，强制登出，强制过期密码的功能，具体安全需求列在了\tref{Table:SecReq}
+The security requirements of the system need to be based on the three elements of security: confidentiality, availability, and integrity (CIA)\cite{cia}. Therefore, in order to maintain the CIA features, functions such as user authentication, access control, data validation, mandatory logout, and mandatory password expiration need to be satisfied, and the specific security requirements are listed in \tref{Table:SecReq}.
+\begin{table}[!htb]
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cm{3cm}m{7cm}}
+\toprule
+\textbf{Security Requirement} & \textbf{Name} & \textbf{Description}   \\ \midrule                                        SR-1                 & Verify Identity of Users      & The system can identify the user(Visitor,Registered,Generator)                                                      \\ \midrule
+SR-2                 & Verify Identity of Devices    & The system can identify the legal Devices(Power generation terminal, power interruption, malicious access terminal) \\ \midrule
+SR-3                 & Verify Authorization of Users & The system can identify who can use the system                                                                      \\ \midrule
+SR-4                 & Integrity of data             & Data in system should be encrypted and should not be modified or stolen by others                                   \\ \midrule
+SR-5                 & Access control                & The system can identify the rights of different users to control the services and files they can access             \\ \midrule
+SR-6                 & Input Validation              & All the Input in the system should be in the bound of the system and be valid.                                      \\ \midrule
+SR-7                 & Monitor security reports      & All dangerous action in system should be monitored and reported                                                     \\ \midrule
+SR-8                 & Enforce logout                & Login should be expired after a period                                                                              \\ \midrule
+SR-9                 & Enforce changing password     & Password should be changed regularly                 \\ 
+\bottomrule      
+\end{tabular}
+}
+\caption{Security requirements of system}
+\label{Table:SecReq}
+\end{table}
+
+\subsection{Performance Requirements}
+% 由于系统涉及金钱交易，所以需要一定的时效性，因此对于系统加载速度，交易提交速度，交易被确认的速度有限制，具体描述列在了\tref{Table:PerfReq}
+Since the system involves money transactions, it needs to be time-sensitive, so there are limits on how fast the system can load, how fast transactions can be submitted, and how fast transactions can be confirmed, as described in \tref{Table:PerfReq}
+\begin{table}[H]
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cm{3cm}m{7cm}}
+\toprule
+\textbf{Performance Requirement} & \textbf{Name} & \textbf{Description}   \\ \midrule                             PR-1                    & Loading speed     & Every page should be loaded in 5 seconds                                           \\ \midrule
+PR-2                    & Trading speed     & Every transaction should be confirmed in 15 seconds                                \\ \midrule
+PR-3                    & Concurrency Speed & The system should support more than a million people trading at the same time      \\ \midrule
+PR-4                    & System Capacity   & The system should support over 100 billion transactions and over 100 million users \\ 
+\bottomrule      
+\end{tabular}
+}
+\caption{Performance requirements of system}
+\label{Table:PerfReq}
+\end{table}
+
+\section{MoSCoW Analysis}
+% 为了快速开发出系统，本项目选择敏捷开发方式。敏捷开发因为其快速成型，快速上线的特性，吸引着无开发者前赴后继地加入敏捷开发的大军，这种开发方法的最核心观念就是快速的开发原型，然后快速的进行迭代\cite{agile}。因此,下一步应该对需求进行分类，排序，从成本和时间等多维度及逆行考量进行优先级排序，优先开发必须有的功能，其次开发应该有的功能，以此类推，这就是MosCoW方法\cite{moscow}。在敏捷开发中，MoSCoW常常被用来对需求进行排序和筛选，本系统的需求排序和筛选结果列在了\tref{Table:moscow}
+In order to develop the system quickly, this project chose the agile development approach. The core concept of this development method is to develop prototypes quickly and then iterate quickly\cite{agile}. Therefore, the next step should be to categorize and rank the requirements, prioritize them in terms of cost and time and other multi-dimensional and retrograde considerations, prioritize the features that must be developed, followed by the features that should be developed, and so on, which is the MosCoW approach \cite{moscow}. In agile development, MoSCoW is often used to sort and filter requirements, and the results of this system are listed in \tref{Table:Moscow}
+The core concept of this development method is to develop prototypes quickly and then iterate quickly, so there is a need to give and take for requirements, and the requirements need to be classified to prioritize the must-have features.
+\begin{table}[!htp]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ll}
+\toprule
+\textbf{Must Haves} & \textbf{Should Haves}\\
+\\ \midrule
+\begin{tabular}[c]{@{}l@{}}-Buy Clean Power\\ -Sell Clean Power Points\\ -Buy Clean Power Points\\ -Generate Clean Power\\ -Generate Clean Power Points\end{tabular} & \begin{tabular}[c]{@{}l@{}}-Login\\ -Register\\ -Use Clean Power Points to buy goods\end{tabular}                                                                 \\
+\midrule
+\textbf{Could Haves} & \textbf{Won't Haves} \\
+\midrule
+\begin{tabular}[c]{@{}l@{}}-Modify Personal Information\\ -Modify password\\ -Add reviews to seller or buyer\\ -Chat with users\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}-Carbon emission transfer\\ -Crypto Mining\\ -See the reviews not belong to you\\ -See the information you should not see\end{tabular} \\
+\bottomrule
+\end{tabular}
+}
+\caption{MoSCoW of the Requirements}
+\label{Table:moscow}
+\end{table}
+
+

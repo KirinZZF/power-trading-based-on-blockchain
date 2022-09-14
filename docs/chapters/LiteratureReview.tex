@@ -1,0 +1,190 @@
+\chapter{Literature Review} \label{chapter:literature}
+% 本项目想要实现的系统涉及碳排放市场，电力交易以及区块链技术，需要阅读大量相关文献，本章节会对涉及到的文献进行总结并对项目的可行性进行讨论。
+The system that this project aims to implement involves carbon emission market, electricity trading and blockchain technology, which requires a lot of reading of related literature. This chapter will summarize the literature involved and discuss the feasibility of the project.
+\section{Carbon Emissions Trading}
+The Emissions Trading System (ETS) is a market-oriented tool launched by governments to reduce greenhouse gas emissions\cite{Han580003}. For every ton of greenhouse gas (usually carbon dioxide) emitted by a company in the carbon trading system emissions (usually carbon dioxide), a unit of carbon allowances is required. Companies can acquire or buy these emissions allowances, and they can also trade them with other companies. Currently, there are 17 carbon trading systems operating on four continents. The total cumulative regional GDP covered by carbon trading systems now accounts for 40\% of global GDP \cite{ZHAO20161229}.
+\subsection{Participants of Carbon Emission Trading}
+% 根据角色不同，目前碳排放交易的参与者可以分为政府，控制排放的企业，减少排放的企业，他们的具体界定如下：
+% 政府：是市场监管者，它通过立法的形式明确碳市场的基本运行规则，如总量配额分配方法等。
+% 控排企业：行业内年度温室气体排放量达到 2.6 万吨二氧化碳当量（综合能源消费量约 1 万吨标准煤）及以上的企业或者其他经济组织。
+% 减排企业：卖出多余配额或生产CER。光伏、风电、生物质能供热及发电等项目均可开发出CCER，不过2017年3月17日，国家发改委发布公告，宣布暂停有关CCER方法学、项目、减排量、审定与核证机构交易机构备案的申请，待《暂行办法》修订完成并发布后，再依据新办法受理。目前，CCER上述相关工作仍处于暂停状态。
+%其中控制排放的企业包含发电，供热，商业航空，以及炼油厂、钢铁厂、及生产铁、铝、其他金属、水泥、石灰、玻璃、陶瓷、纸浆、纸张、纸板、酸液和大批量有机化学品能源密集型的工业等
+According to the different roles, the current participants of carbon emissions trading can be divided into government, enterprises controlling emissions, and enterprises reducing emissions, and they are defined as \tref{Table:tabRoleAndRes} \cite{ZHAO20171}:
+\begin{table}[!htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{m{7cm}m{7cm}}
+    \toprule
+        \textbf{Role} & \textbf{Responsibilities} \\ \midrule
+        Government & It is the regulator of the market, which specifies the basic operating rules of the carbon market through legislation, such as the method of allocating total allowances. \\ \midrule
+        Emission-controlling enterprises & Enterprises or other economic organizations in the industry with annual greenhouse gas emissions of 26,000 tons of carbon dioxide equivalent (integrated energy consumption of about 10,000 tons of standard coal) and above. \\ \midrule
+        Emission reduction enterprises & Sell excess allowances or produce emission credits. Emission credits can be developed by photovoltaic, wind power, biomass heating and power generation projects. \\
+    \bottomrule
+    \end{tabular}
+    }
+    \caption{The role and responsibilities in emission market}
+    \label{Table:tabRoleAndRes}
+\end{table}
+
+
+Among the companies that need to control emissions are power generation, heating, commercial aviation, and refineries, steel plants, and energy-intensive industries producing iron, aluminum, other metals, cement, lime, glass, ceramics, pulp, paper, cardboard, acids, and high-volume organic chemicals \cite{YUYIN2018675}.
+
+\subsection{Benefits and Problems of Carbon Emission Trading}
+% 碳排放交易的优点如下：
+% 1.碳排放交易保证环境效益：通过设定绝对总量并控制实际排放量，可有效实现减排领域的环境目标。就此而言，碳交易体系提供了其他政策工具所不具备的优点。以碳税为例，监管机构可通过征税保持价格稳定，但无法保证体系内的总排放量水平。补贴、标准以及监管法规等工具主要针对排放强度，效果存在不确定因素。相比之下，碳排放交易体系则控制总排放量，可保证实现减排目标。
+% 2.碳排放交易保证成本效益：碳交易体系可以最低的经济成本实现既定减排目标。该体系主要通过对企业提供灵活性安排其减排时间和地点，来实现成本效益。各实体可选择经济效益最高的减排措施。在低成本减排方案不足的情况下，亦可选择在市场上购买配额。购买配额意味着一家企业正在资助另一家减排成本更低的企业实施减排。
+% 3.碳排放交易提供经济灵活性：碳交易体系内根据当前经济状况调整碳价。若经济增长、排放量上升，配额价格将走高。经济增速放缓期间，价格则随产量和消费量减少而下降。可将碳排放交易体系视为经济风向标：经济强劲发展且能够投资低碳减排领域的时期，该体系可为开展减排工作提供更多激励。经济增速放缓时期，该体系设定的排放价格则相应下降。
+% 4.实行碳排放交易体系可进一步加快开发、普及和应用低碳技术：通过设定长期总量，碳排放交易提供了长期价格信号，同时为私人投资开发和应用低排放/零排放技术提供了重要激励，从而降低了未来减排领域的宏观经济成本。此外，强劲的价格信号也有助于在市场参与者中间普及低排放/零排放技术。
+% 5.碳交易制度为不同地区减排体系链接和减排合作提供可能性：通过碳交易体系的链接从而形成更广大的市场，有助于增加符合成本效益的减排选择，提高市场流动性。
+
+\tref{Table:advofcarbonemision} shows the advantages of carbon emissions trading market\cite{JIA2020120187}.
+\begin{table}[!htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{m{4cm}m{10cm}}
+    \toprule
+        \textbf{Advantages} & \textbf{Disadvantages} \\ \midrule
+        High environmental benefits & High access threshold\\ \midrule
+        High Cost-effectiveness &  Low marketability \\ \midrule
+        High economic flexibility & Poor traceability\\ \midrule
+        Accelerated low-carbon technologies & Carbon emission management for production materials (e.g. electricity) is not systematic \\ \midrule
+        Compatibility to other fields and regions & \\ 
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Advantages and disadvantages of carbon emission market}
+    \label{Table:advofcarbonemision}
+\end{table}
+
+\section{Blockchain}
+% 区块链可以被看作是一个公共账本，其中所有承诺的交易都被储存起来，并在所有参与的可信方之间共享。它使数据或价值项目在两方之间转移，同时消除了对第三方促进转移的需要。
+% 区块链的第一个公共使用案例是比特币。比特币是一种点对点的加密货币，它使用一个公共账本来记录所有的交易。第一笔比特币交易发生在2009年1月12日，中本聪和哈尔-芬尼之间。这笔第一笔交易来自中本聪的比特币地址1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa，在创世区块（区块链网络的第一个区块）中发现。 \`footnote{\url{ https://news.bitcoin.com/eight-historic-bitcoin-transactions/}}。
+% 众所周知，比特币是由中本聪开发的，详见他在2008年撰写的一篇名为《比特币：一个点对点的电子现金系统》的论文~\cite{nakamoto2019bitcoin}。
+% 比特币因 "丝绸之路 "而流行，这是一个以销售非法毒品而闻名的在线黑市，使用加密货币进行匿名支付~cite{fleder2015bitcoin}。记录在区块链公共账本中的交易是永久性和不可改变的，发送方和接收方只能通过加密密钥来识别。
+% 不变性是区块链的关键基石之一，它保证了存储在分布式账本中的数据的不可抵赖性和完整性。假设今天你从任何公开的比特币交易网站，如BitRef.com、Bit.com或Blockchain.com，查询中本聪的比特币地址，1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa，你会得到从2009年第一笔交易到现在通过该比特币地址进行的所有交易。在撰写这篇论文时（2020年8月22日），这个比特币地址共有488笔交易，图2.1描述的是第一笔交易
+%  此外，执法机构一直在依靠区块链记录的不变性，对通过互联网进行的非法支付交易进行调查。一个例子是丝绸之路的主谋Russ Ulbricht的案件，联邦陪审团以贩毒和洗钱的罪名判处他终身监禁，因为他的比特币地址是非法丝绸之路在线交易的主要受益人。
+% 值得注意的是，即使在2013年丝绸之路被关闭后，丝绸之路毒品交易的所有比特币加密货币交易仍可在区块链上找到。这进一步证明，交易一旦记录在区块链账本上，就是永久的、不可更改的。在本文的设计和实施部分，我们将研究区块链的这种不可变性特征在我们的原型物联网安全和节能系统中为Gated社区提供的好处。
+% 区块链技术最近已经从众所周知的加密货币支付平台发展成为一种可以可靠地用于政府、金融机构和企业实现去中心化应用的技术。
+
+
+% \par区块链，可能是当下最有前景又充满分歧的技术与经济趋势。它给数字世界带来了“价值表示”和“价值转移”两项全新的基础功能。其潜力正在显现出来，但当下它又处于朦胧与野蛮生长的阶段。对比互联网的发展史，现在的区块链可能相当于1994年的互联网，即互联网刚刚进入大众视野的时期，那也是第一波互联网革命萌芽的时期。谷歌、亚马逊、Facebook、腾讯、阿里巴巴、优步、滴滴，甚至现在市值超万亿的苹果都得益于那一时刻。现在区块链技术可能带来互联网的二次革命，把互联网从“信息互联网”带向“价值互联网”。在区块链的对照之下，人们发现，最初被形象地称为“信息高速公路”的互联网处理的是“信息”，而区块链能处理的是“价值”。
+% 众所周知，区块链的第一个应用案例是中本聪所开发的比特币，具体技术细节详见他的比特币白皮书[1]，2009年1月3日，在位于芬兰赫尔辛基的服务器上，至今匿名的神秘技术极客中本聪生成了第一个比特币区块，即所谓的比特币创世区块（genesis block）。在创世区块的备注中，中本聪写入了当天英国《泰晤士报》的头版头条标题：“The Times 03/Jan/2009 Chancellor on brink of second bailout for banks”。在生成创世区块时，按他自己设定的规则，中本聪获得了 50 个比特币奖励，这是最早的 50个比特币。从创始区块开始，在比特币的账本上每10分钟就有新的数据区块被增加上去，新的比特币被凭空发行出来。比特币的去中心网络开始运转，扩展到现在的由数万个节点组成的全球网络。在比特币的创世时刻，它的三个组成部分都出现了，即加密数字货币、分布式账本、去中心网络。随着比特币的流行，它的分布式账本和去中心网络被人们提取出来，组成了区块链技术，所以，一种安全共享的去中心化的数据账本这一说法成为了目前公认的区块链定义[2]。区块链技术最近已经从众所周知的加密货币支付平台发展成为一种可以可靠地用于政府、金融机构和企业实现去中心化应用的技术[3]。
+
+Blockchain is the most controversial but also the most rapidly developing technology today\cite{Blockchaintechnologyprinciplesandapplications}. For the digital world, what it does is create two new functions: "value representation" and "value transfer". The real role of blockchain has been discovered and practically applied.\cite{Andolfatto2018}. As the report said\cite{FRIZZOBARKER2020102029}, blockchain will transfer Internet from information world to value world.
+
+The first known use case for blockchain was Bitcoin, developed by Satoshi Nakamoto, as detailed in his Bitcoin white paper \cite{nakamoto2019bitcoin}. At the moment of Bitcoin's creation, all three of its components emerged: the cryptographic digital currency, the distributed ledger, and the decentralized network. With the popularity of Bitcoin, its distributed ledger and decentralized network were extracted to form the blockchain technology, so the phrase a secure shared decentralized data ledger became the currently accepted definition of blockchain \cite{Ammous2016}. In recent years, blockchain technology has evolved through continuous development from a controversial technology closely tied to the term cryptocurrency to a new tool to help governments and enterprises achieve tighter and more efficient supply chains and information management\cite{8343163}.
+
+\subsection{The underlying technology of blockchain}
+% 去中心化信任：很多企业之所以采用区块链技术而不是其他数据存储技术，主要原因就是区块链不依赖中央权威就能保证数据完整性，即基于可靠数据实现去中心化信任。
+% 区块：区块链顾名思义就是将数据存储在区块中，然后每一个区块都与前一个区块连接，组成链状结构。它仅支持添加（附加）新的区块，一旦添加，就无法修改或删除。
+% 共识算法：共识算法负责区块链系统内的规则执行。当各参与方为区块链设置规则后，共识算法将确保各方遵守这些规则。
+% 区块链节点：区块链节点负责存储数据区块，是区块链中的存储单元，可保持数据同步和始终处于最新状态。任意节点都可以快速确定是否有区块发生了变更。当一个新的全节点加入区块链网络时，它会下载当前链上所有区块的副本。而当新节点与其他节点同步并更新至最新的区块链版本后，它可以像其他节点一样接收任意的新区块。
+% 区块链节点可分为两大类：
+
+% 全节点：存储区块链的完整副本。
+% 轻节点：仅存储最新区块且可在用户需要时请求较旧的区块。
+% 区块链的分类
+% 公共区块链：任何人都可以不受限制地加入公共或无许可区块链网络。在现实中，绝大多数类型的加密货币都在由规则或共识算法控制的公共区块链上运行。
+% 许可区块链：专有或许可区块链允许企业控制哪些人可以访问区块链数据，即只有获得授权的用户才能访问特定数据集。Oracle 区块链平台就属于许可区块链。
+% 区块链系统的基础技术构成为去中心化信任，区块，共识机制，节点，他们的具体作用如\tref{Table:partsofblocks}所示，其中，节点又可以分为全节点和轻节点，全节点承担保存整个区块链完整数据的任务，轻节点只负责存储近期的数据。区块链也可以分为公链和许可链，公链人人可以参与，而许可链仅允许受到特定许可的人或者机构参与。
+The basic technical components of the blockchain system are decentralized trust, blocks, consensus mechanisms, and nodes\cite{LIM2021107133}, whose specific roles are shown in \tref{Table:partsofblocks}, where nodes can be divided into full nodes and light nodes, with full nodes undertaking the task of storing the complete data of the entire blockchain and light nodes only storing recent data. Blockchains can also be divided into public chains and permission chains\cite{permissionedandpublicblockchain}, where public chains are available to everyone, while permission chains only allow participation by people or institutions with specific permission.
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{m{3cm}m{11cm}}
+    \toprule
+        \textbf{Technology} & \textbf{Description} \\ \midrule
+        Decentralized trust & Guarantee data integrity without relying on central authority \\ \midrule
+        Block & Stores data, once stored, can not be changed \\ \midrule
+        Consensus mechanism & Ensure that all nodes follow the same rules to save the same data \\ \midrule
+        Node & Stores blocks of data and it is the storage unit in the blockchain that keep data synchronized and always up-to-date \\
+    \bottomrule
+    \end{tabular}
+    }
+
+    \caption{Parts of a blockchain system}
+    \label{Table:partsofblocks}
+\end{table}
+
+\subsection{Features comparison between blockchain technologies}
+% 随着区块链从业人员以及参与企业的日渐增多，许多区块链的基础工具出现了，比较有代表性的两个是Hyper Ledger和以太坊，他们的区别列在了表1中。经过对比，本项目选择Hyper Ledger Fabric作为区块链工具，原因是本项目的性质是私链，对于私链而言，Hyper Ledger Fabric无疑是更多企业在进行私链开发时的选择，且无需挖矿。
+With the increasing number of blockchain practitioners as well as participating companies, many blockchain-based tools have emerged. Two of the more representative ones are Hyper Ledger Fabric and Ether\cite{comparisionethhyper}, and their differences are listed in \tref{Table:comparisionblockchain}. Through comparison, Hyper Ledger Fabric is chosen as the blockchain tool for this project because the character of this project is private chain, and for private chain, Hyper Ledger Fabric is undoubtedly the choice for more enterprises when they do private chain development and no mining is required.
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lm{5cm}m{5cm}}
+\toprule
+\textbf{Features} & \textbf{Hyperledger} & \textbf{Ethereum}                                                            \\ \midrule
+                           & Preferred platform for B2B businesses             & Platform for B2C bussinesses and generalized applicaitons           \\ \midrule
+Confidential               & Confidential transactions                         & Transparent                                                         \\ \midrule
+Mode of Peer Participation & Private and Permissioned Netword                  & Public/Private and permissionless netword                           \\ \midrule
+Consensus Mechanism        & Pluggable Consensus Algorithm: No mining required & PoW Algorithm: Consensus is reached by mining                       \\ \midrule
+Programming Language       & Chaincode written in Golang                       & Smart Contracts written in solidity(Implements by golang in ETH2.0) \\ \midrule
+Crypto currency             & No built-in crypto currency                        & Built-in crypto currency called Ether\\    
+\bottomrule
+\end{tabular}
+}
+
+\caption{Comparision between blockchain technologies}
+\label{Table:comparisionblockchain}
+\end{table}
+
+
+\subsection{Consensus Mechanisms}
+% 如上一部分所述，区块链系统成立的基础其实是共识机制，共识机制分为两大类，拜占庭容错和非拜占庭容错，最常用到的是PoW，PoS，PoA，DPoS，PBFT，Raft，他们具体的概述被列在了\tref{Table:consensus}中。在选择共识机制时，首先排除PoW，PoS以及DPoS，因为他们都需要挖矿，与项目初衷不符，接着排除Paxos，因为它几乎没有软件实现，PoA也因为不符合项目要求而排除，最后在Kafka和Raft中选择了Raft是因为Kafka配置繁琐，稳定性低。
+According to the description of blockchain before, the basis for the successful establishment and stable performance of blockchain systems is actually the consensus mechanism, which is divided into two main categories, Byzantine fault tolerance and non-Byzantine fault tolerance, the most commonly used ones are PoW, PoS, PoA, DPoS, PBFT, Raft \cite{Mingxiao2017}, and their specific overviews are listed in \tref{Table:consensus}. When choosing the consensus mechanism, PoW, PoS and DPoS were excluded first because they all required mining, which was not in line with the original intention of the project, then Paxos was excluded because it had almost no software implementation, PoA was also excluded because it did not meet the requirements of the project, and finally Raft was chosen among Kafka and Raft because of the cumbersome configuration and low stability of Kafka.
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cm{2cm}m{3cm}m{3cm}m{2cm}m{2cm}}
+\toprule
+\textbf{Category}& \textbf{Name} & \textbf{Advantage} & \textbf{Disadvantage} & \textbf{Mining} & \textbf{Example}                               \\ 
+\midrule
+\multirow{5}{*}{Byzantine fault tolerance}     & PoW   & Simple and easy to implement, high security                                                  & Environmentally unfriendly and heavily dependent on miners                     & Yes    & Bitcoin, Ethereum, Litecoin, Dogecoin \\ \cline{2-6} 
+                                               & PoS   & Consensus reaching time and energy consumption less than PoW                                 & Easy to form monopolies and easily bifurcated                                  & Yes    & Ethereum, Peercoin, Nxt               \\ \cline{2-6} 
+                                               & DPoS  & Fast to confirm transactions and low energy cost                                             & Have centralization and security risks                                         & Yes    & Steemit, EOS, Lisk, Ark               \\ \cline{2-6} 
+                                               & PoA   & Perfect for private chains, fast to confirm transactions                                     & Sacrificing trustworthiness                                                    & No     & Ethereum, Kovan, testnet, VeChain     \\ \cline{2-6} 
+                                               & PBFT  & Communication complexity O($n^{2}$), and effective                                           & Only applicable to permissionsed systems                                       & No     & Hyper Ledger Fabric                   \\ \midrule
+\multirow{3}{*}{Non-Byzantine fault tolerance} & Paxos & Efficient, with rigorous mathematical proofs, well-designed systems and high fault tolerance & Engineering practice is difficult and only applicable to permissionsed systems & No     & -                                     \\ \cline{2-6} 
+                                               & Kafka & Easy to realize and maintain                                                                 & Low security                                                                   & No     & Hyper Ledger Fabric                   \\ \cline{2-6} 
+                                               & Raft  & Effective and easy to implement                                                              & Only applicable to permissioned systems                                        & No     & Hyper Ledger Fabric                   \\ 
+\bottomrule
+\end{tabular}
+}
+    \caption{Details of consensus mechanisms}
+    \label{Table:consensus}
+\end{table}
+
+\section{Blockchain-based Power Trading Market}
+% 现代社会正常运转无法离开电力，煤炭，石油，天然气都可以产生电力，但是电力进入电力市场需要有可以被人们接受的价格，否则便会无人问津，当前化石能源生产的电力成本随着各国对各行业的碳排放限制逐步增加，而清洁能源电力反而随着技术的更新迭代不断地降低了成本，但是清洁能源电力占据市场份额的步伐却没有预想中迅速，与其市场化程度低是有一定关系的\cite{renewableenergy}。
+Modern society cannot function without power, coal, oil, natural gas can produce power, but power in the power market needs to have a price that people can accept, otherwise no one will ask for it. The current cost of power produced by fossil energy is gradually increasing with the tightening of carbon emission policies in various countries, while clean energy power with the iteration of technology continues to reduce the cost, but the pace of clean energy power to occupy the market share is not as fast as expected, and its low degree of marketization is somewhat related to \cite{renewableenergy}
+
+% 区块链是电力行业市场化的一个理想工具，目前已经有许多的基于区块链的电力项目落地，并且运行良好，他们有不同的特性，具体的对比列在了\tref{Table:ComparePowerMarket}
+Blockchain is an ideal tool for marketization in the power industry, and there are already many blockchain-based power projects on the ground and working well \cite{Jamil2021}, they have different characteristics, the specific comparison is listed in \tref{Table:ComparePowerMarket}.
+\begin{table}[!htp]
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lm{2cm}m{2cm}m{2cm}m{2cm}}
+\toprule
+\textbf{Platform} & \textbf{Pricing Mechanism} & \textbf{Consensus} & \textbf{Crypto Currency} & \textbf{Mining} \\ \midrule
+NRG coin        & Yes               & PoW/PoS              & Yes             & Yes             \\ \midrule
+Sunchain        & No                & PoW                  & No              & No              \\ \midrule
+GridSingularity & No                & PoA                  & Yes             & Yes             \\ \midrule
+Excrgy          & Yes               & PoS                  & Yes             & Yes             \\ \midrule
+SolarCoin       & Yes               & PoS                  & Yes             & Yes             \\ \midrule
+Pylon network   & Yes               & PoW                  & Yes             & Yes             \\ \midrule
+Power Ledger    & Yes               & PoW/PoS              & Yes             & Yes             \\ \midrule
+Proposed System & No                & PBFT                 & No              & No             \\
+\bottomrule
+\end{tabular}
+}
+
+
+\caption{Comparision between power blockchain project}
+\label{Table:ComparePowerMarket}
+\end{table}
+
+\section{Disscussion}
+% 从之前的文献可以知道，电力交易衍生品目前主要包括绿色电力证书和可再生能源过度消费证书。电力衍生品本身只具有金融属性，通常独立于现有电力市场进行交易。开发基于区块链技术的衍生品交易平台可以减少与现有系统数据库的交互，降低开发难度和开发成本，同时发挥技术的信任保障优势。例如，通过基于区块链的绿色电力证书和全民碳排放权交易系统，可以提高个人减排的积极性，为全球环境做出巨大贡献。目前还没有适合个人直接参与的区块链清洁能源电力认购项目，也没有个人可以参与的区块链碳交易项目，而随着人们环保意识的增强，全球气候有更加严峻的趋势。碳排放将成为一个重要的经济项目，甚至是一个金融项目，而企业碳排放交易已经实施了多年，效果很好，现在是时候借助区块链技术向个人开放碳交易市场，让更多人参与其中。综上所述，目前市场在个人清洁电力和碳排放交易领域是存在空白的，可以由此开发一个基于区块链的电力交易系统，填补这个空白。
+From the previous literature, it is known that power trading derivatives currently include mainly green power certificates and renewable energy overconsumption certificates. Power derivatives themselves have only financial attributes and are usually traded independently of the existing power market. Developing a derivatives trading platform based on blockchain technology can reduce the interaction with the existing system database, reduce the development difficulty and development cost, and at the same time take advantage of the trust guarantee of the technology. For example, through blockchain-based green power certificates and a universal carbon trading system, individuals can be more motivated to reduce emissions and make great contributions to the global environment. At present, there is no blockchain clean energy power subscription project suitable for direct personal participation, nor is there a blockchain carbon trading project that individuals can participate in, but as the global climate has a more severe trend, people are increasingly aware of environmental protection. Carbon emission will become an important economic project, or even a financial project, while corporate carbon emission trading has been implemented for many years with good results, and now it is time to open the carbon trading market to individuals with the help of blockchain technology, so that more people can participate in it. To sum up, there is currently a gap in the market in the field of linking personal clean power and carbon emissions trading, and a blockchain-based power trading system can be developed as a result to fill this gap.

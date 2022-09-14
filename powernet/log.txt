@@ -1,0 +1,3 @@
+Installed chaincodes on peer:
+Package ID: users_1:cb74a6dd3b0161112f437f98d17c4b314fc1df46fa2b6559fce2f8f6c7c3ebbd, Label: users_1
+Package ID: certificates_1:314267411b64dda103fc550e57c1e8e52eb4ebbcfcdcc7ec51a0aeb47b920c1e, Label: certificates_1
